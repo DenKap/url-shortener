@@ -1,1 +1,9 @@
-<input class="short-url" id="shorturl" value="<%= s_url(@link.short_url) %>"></input>
+<div class="container">
+	<p class="move-back">&larr; <%=link_to 'Home Page', root_path %></p>
+  <div class="wrapper">
+  	<h3>Your Pretty Shortened URL:</h3>
+  	<%=form_for @link, url: links_path do |f| %>
+      <div class="short"><%= l_url(@link.short_url) %></div>
+    <% end %>
+	</div>
+</div>

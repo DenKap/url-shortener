@@ -1,0 +1,15 @@
+<nav class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+		<div class="navbar-header">
+			<% if @current_user %>
+			  <p class="navbar-text">Signed in as <%=@current_user.name %></p>
+			  <a class="btn btn-success navbar-btn" href='/links'>Explore Links</a>
+			  <a class="btn btn-default navbar-btn" href='/logout'>Logout</a>
+			<% else %>
+			  <h2>Join us and get access to Links Dashboard!</h2>
+			  <a class="btn btn-default navbar-btn" href='/auth/facebook'>Sign in with Facebook</a>
+			  <a class="btn btn-default navbar-btn" href='/auth/twitter'>Sign in with Twitter</a>
+			<% end %>
+		</div>
+  </div>
+</nav>

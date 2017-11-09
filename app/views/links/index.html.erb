@@ -1,23 +1,26 @@
-<% if @links.present? %>
-  <table class="styled">
-    <thead>
-      <tr>
-        <th>Original Link</th>
-        <th>Shortened Link</th>
-        <th>Clicks count</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @links.each do |link| %>
-      <tr>
-        <td><%=link_to link.original_url, link_path(link) %></td>
-        <td><%=link.short_url %></td>
-        <td><%=link_to link.clicks %></td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-<% else %>
-  <p class="nothing">There are no any links yet</p>
-<% end %>
-<%=will_paginate @links, :renderer => BootstrapPagination::Rails %></div>
+<div class="container">
+  <p class="move-back">&larr; <%=link_to 'Home Page', root_path %></p>
+  <% if @links.present? %>
+    <table class="styled">
+      <thead>
+        <tr>
+          <th>Original Link</th>
+          <th>Shortened Link <br />(domain.name/)</th>
+          <th>Clicks count</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @links.each do |link| %>
+        <tr>
+          <td><%=link_to link.original_url, link_path(link) %></td>
+          <td><%=link.short_url %></td>
+          <td><%=link_to link.clicks %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p class="nothing">There are no any links yet</p>
+  <% end %>
+  <%=will_paginate @links, :renderer => BootstrapPagination::Rails %></div>
+</div>

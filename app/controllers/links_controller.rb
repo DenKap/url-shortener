@@ -1,4 +1,5 @@
 class LinksController < ApplicationController
+  before_action :check_logged_in, only: :index
 
   def index
     @links = Link.all.paginate(page: params[:page], per_page: 10)
