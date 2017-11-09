@@ -32,6 +32,9 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'will_paginate', '~> 3.1.0'
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
   gem 'pry-rails'

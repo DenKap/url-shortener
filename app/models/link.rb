@@ -8,7 +8,7 @@ class Link < ApplicationRecord
   private
 
   def shortened_url
-    self.slug = 6.times.map { [*'0'..'9', *'a'..'z'].sample }.join
+    self.short_url = 6.times.map { [*'0'..'9', *'a'..'z'].sample }.join until Link.find_by_short_url(self.short_url).nil?
   end
 
 end
