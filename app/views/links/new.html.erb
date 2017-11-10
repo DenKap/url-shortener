@@ -1,9 +1,12 @@
 <div class="container">
   <div class="wrapper">
-  <%= render partial: 'layouts/partials/form_error_messages', locals: { object: @link } %>
-    <%=form_for @link, url: links_path do |f| %>
-      <div><%=f.text_field :original_url %></div>
-      <div><%=f.submit 'Make it shorter!' %></div>
-    <% end %>
+  	<h3>Paste an URL:</h3>
+  	<div class="url-form">
+		  <%= render partial: 'layouts/partials/form_error_messages', locals: { object: @link } %>
+		  <%=form_for @link, url: links_path do |f| %>
+		    <div><%=f.text_field :original_url %></div>
+		    <div><%=f.submit 'Make it shorter!' %></div>
+		  <% end %>
+		</div>
   </div>
 </div>
